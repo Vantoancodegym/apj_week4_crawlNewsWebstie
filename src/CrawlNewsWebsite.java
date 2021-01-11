@@ -17,6 +17,7 @@ public class CrawlNewsWebsite {
             Pattern p= Pattern.compile("htm\">(.*?)</a>");
             Matcher m=p.matcher(content);
             while (m.find()){
+                if (m.group(1).matches(".{0,50}"))
                 System.out.println(m.group(1));
             }
         } catch (Exception e) {
